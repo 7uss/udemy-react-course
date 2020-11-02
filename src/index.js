@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './app/layout/styles.css';
 import App from './app/layout/App.jsx';
 import * as serviceWorker from './serviceWorker';
+import 'semantic-ui-css/semantic.min.css';
 
 const rootEl = document.getElementById('root');
 
@@ -11,7 +12,9 @@ function render(){
 }
 
 if (module.hot) {
-  module.hot.accept('./app/layout/App.jsx', () => setTimeout(render) )
+  module.hot.accept('./app/layout/App', function () {
+    setTimeout(render);
+  });
 }
 
 render();
